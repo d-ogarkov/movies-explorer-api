@@ -13,4 +13,4 @@ Node.JS + Express, MongoDB.
 
 ## Репозиторий
 
-[Ссылка на репозиторий](https://github.com/d-ogarkov/movies-explorer-api)
+* [Ссылка на репозиторий](https://github.com/d-ogarkov/movies-explorer-api)

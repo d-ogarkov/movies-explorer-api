@@ -63,7 +63,6 @@ module.exports.getCurrentUser = (req, res, next) => {
 
 module.exports.updateUser = (req, res, next) => {
   const { email, name } = req.body;
-  console.log(req.body);
   User.findByIdAndUpdate(
     req.user._id,
     { email, name },
@@ -73,7 +72,6 @@ module.exports.updateUser = (req, res, next) => {
     },
   ).select('email name _id')
     .then((user) => {
-      console.log(user);
       if (!user) {
         throw new NotFoundError(MESSAGE_TYPE.noUser);
       }

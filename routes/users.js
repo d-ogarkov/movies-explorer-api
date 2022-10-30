@@ -4,7 +4,6 @@ const {
   getCurrentUser, updateUser,
 } = require('../controllers/users');
 const { REGEX_PATTERN } = require('../constants/patterns');
-const { TYPE } = require('../constants/types');
 
 router.get('/me', getCurrentUser);
 
