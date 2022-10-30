@@ -1,10 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
 
-const { PORT = 3000, BASE_PATH } = process.env;
+const {
+  PORT = 3000, NODE_ENV, BASE_PATH, DB_NAME,
+} = process.env;
 const app = express();
 
 const routes = require('./routes/index');
@@ -17,7 +20,7 @@ const { allowedCors, DEFAULT_ALLOWED_METHODS, DEFAULT_ALLOWED_HEADERS } = requir
 app.use(limiter);
 
 // Подключаемся к серверу MongoDB
-mongoose.connect('mongodb://localhost:27017/moviesdb', {
+mongoose.connect(NODE_ENV === 'production' ? DB_NAME : 'mongodb://localhost:27017/moviesdb', {
   autoIndex: true, // Без этого не будет работать unique: true
 });
 
