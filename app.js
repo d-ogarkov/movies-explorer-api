@@ -19,6 +19,7 @@ const { allowedCors, DEFAULT_ALLOWED_METHODS, DEFAULT_ALLOWED_HEADERS } = requir
 // Защита от брутфорса/DDоS'а
 app.use(limiter);
 
+console.log(process.env);
 // Подключаемся к серверу MongoDB
 mongoose.connect(NODE_ENV === 'production' ? DB_NAME : 'mongodb://localhost:27017/moviesdb', {
   autoIndex: true, // Без этого не будет работать unique: true
