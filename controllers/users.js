@@ -78,6 +78,9 @@ module.exports.updateUser = (req, res, next) => {
       return res.send(user);
     })
     .catch((err) => {
+      if (err.code === 11000) {
+        return next(new ConflictError(MESSAGE_TYPE.userExists));
+      }
       if (err.name === ERROR_TYPE.validity) {
         return next(new ValidityError(MESSAGE_TYPE.validity));
       }

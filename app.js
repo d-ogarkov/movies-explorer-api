@@ -16,6 +16,9 @@ const limiter = require('./middlewares/rate-limiter');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { allowedCors, DEFAULT_ALLOWED_METHODS, DEFAULT_ALLOWED_HEADERS } = require('./constants/cors');
 
+// Логирование запросов к серверу
+app.use(requestLogger);
+
 // Защита от брутфорса/DDоS'а
 app.use(limiter);
 
@@ -48,9 +51,6 @@ app.use(helmet());
 
 // Для разбора JSON
 app.use(bodyParser.json());
-
-// Логирование запросов к серверу
-app.use(requestLogger);
 
 // Роутинг (вынесен отдельно)
 app.use(routes);

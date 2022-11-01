@@ -1,17 +1,10 @@
 const router = require('express').Router();
-const { celebrate, Joi } = require('celebrate');
 const {
   getCurrentUser, updateUser,
 } = require('../controllers/users');
-const { REGEX_PATTERN } = require('../constants/patterns');
+const { updateUserValidator } = require('../utils/validator');
 
 router.get('/me', getCurrentUser);
-
-router.patch('/me', celebrate({
-  body: Joi.object().keys({
-    email: Joi.string().pattern(REGEX_PATTERN.email),
-    name: Joi.string().min(2).max(30),
-  }),
-}), updateUser);
+router.patch('/me', updateUserValidator, updateUser);
 
 module.exports = router;

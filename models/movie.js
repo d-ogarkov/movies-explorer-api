@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { REGEX_PATTERN } = require('../constants/patterns');
+const { isURL } = require('validator');
 
 const movieSchema = new mongoose.Schema({
   country: {
@@ -25,29 +25,17 @@ const movieSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
-    validate: { // Валидация корректности ссылки на уровне схемы
-      validator(v) {
-        return REGEX_PATTERN.url.test(v);
-      },
-    },
+    validate: [isURL],
   },
   trailerLink: {
     type: String,
     required: true,
-    validate: { // Валидация корректности ссылки на уровне схемы
-      validator(v) {
-        return REGEX_PATTERN.url.test(v);
-      },
-    },
+    validate: [isURL],
   },
   thumbnail: {
     type: String,
     required: true,
-    validate: { // Валидация корректности ссылки на уровне схемы
-      validator(v) {
-        return REGEX_PATTERN.url.test(v);
-      },
-    },
+    validate: [isURL],
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
@@ -55,7 +43,7 @@ const movieSchema = new mongoose.Schema({
     required: true,
   },
   movieId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Number,
     required: true,
   },
   nameRU: {
