@@ -5,7 +5,7 @@ const ValidityError = require('../errors/validity');
 const { ERROR_TYPE, MESSAGE_TYPE } = require('../constants/errors');
 
 module.exports.getMovies = (req, res, next) => {
-  Movie.find({})
+  Movie.find({ owner: req.user._id })
     .then((movie) => res.send(movie))
     .catch(next);
 };
