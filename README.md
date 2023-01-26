@@ -1,16 +1,21 @@
-# movies-explorer-api
+# Movies Explorer (бэкенд)
 
-Дипломная работа. Бэкенд сервиса, в котором можно найти фильмы по запросу и сохранить в личном кабинете.
+Бэкенд-часть дипломной работы в Яндекс.Практикуме. Сервис, в котором можно найти фильмы по запросу и сохранить в избранном. Реализует REST API.
 
-## На чем сделано
+Выполнено на Node.JS + Express, MongoDB.
 
-Node.JS + Express, MongoDB.
+## Демо
 
-## Как найти бэкенд
-
-* IP 158.160.15.213
 * https://api.favemovies.nomoredomains.icu
+* Демо фронтенда: https://favemovies.nomoredomains.icu
 
-## Репозиторий
+## Запуск
 
-* [Ссылка на репозиторий](https://github.com/d-ogarkov/movies-explorer-api)
+`npm run dev` — запуск в режиме разработки с автоперезапуском
+
+`npm start` — запуск в обычном режиме
+
+## Ссылки
+
+* [Репозиторий](https://github.com/d-ogarkov/movies-explorer-api)
+* [Фронтенд проекта](https://github.com/d-ogarkov/movies-explorer-frontend)
