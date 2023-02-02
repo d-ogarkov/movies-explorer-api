@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const { errors } = require('celebrate');
 
 const {
-  PORT = 3000, NODE_ENV, BASE_PATH, DB_NAME,
+  PORT = 3002, NODE_ENV, BASE_PATH, DB_NAME,
 } = process.env;
 const app = express();
 
