@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://favemovies.nomoredomains.icu',
-  'http://favemovies.nomoredomains.icu',
+  'https://movies.ogarkov.com',
+  'http://movies.ogarkov.com',
   'http://localhost:3000',
   'localhost:3000',
 ];
