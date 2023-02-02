@@ -6,8 +6,8 @@
 
 ## Демо
 
-* https://api.favemovies.nomoredomains.icu
-* Демо фронтенда: https://favemovies.nomoredomains.icu
+* https://api.movies.ogarkov.com
+* Демо фронтенда: https://movies.ogarkov.com
 
 ## Запуск
 
